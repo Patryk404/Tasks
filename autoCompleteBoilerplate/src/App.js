@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import * as actions from "./store/actions/index";
-
-
+import "./css/App.css"; 
 
 const App = (props) => {
   const [state, setState] = useState({
@@ -79,7 +78,7 @@ const App = (props) => {
     }
 
     return (
-      <div>
+      <ul>
         {users.map((user) => {
           let bold = state.input.toLowerCase();
           user.upper_case.map((index) => {
@@ -90,17 +89,17 @@ const App = (props) => {
 
           // console.log(username.username);
           return (
-            <p
+            <li
               style={{ cursor: "pointer" }}
               onClick={() => completeInput(user.username)}
               key={user.username}
             >
               <strong>{bold}</strong>
               {user.username.split(bold)[1]}
-            </p>
+            </li>
           );
         })}
-      </div>
+      </ul>
     );
   };
 
