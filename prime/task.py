@@ -1,6 +1,6 @@
 import time
 import math
-def is_prime(num):
+def is_prime(num): # Time Complexity: O(sqrt(n))
   if num<= 1:
       return False
   for i in range(2,int(math.sqrt(num))+1):
@@ -8,7 +8,7 @@ def is_prime(num):
       return False
   return True
 
-def task_faster(tab1,tab2):
+def task(tab1,tab2): # Time Complexity: O(n+m)
     freq = {} 
     tab3 = []
     for num in tab2:
@@ -19,6 +19,6 @@ def task_faster(tab1,tab2):
     return tab3
 
 start_time= time.time()
-print(task_faster([2,3,9,2,5,1,3,7,10],[2,1,3,4,3,10,6,6,1,7,10,10,10] ))
+print(task([2,3,9,2,5,1,3,7,10],[2,1,3,4,3,10,6,6,1,7,10,10,10]))
 end_time = time.time()
-print("--- seconds ---",(end_time-start_time))
+print(f"Execution Time: {end_time-start_time}")
